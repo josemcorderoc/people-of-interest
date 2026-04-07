@@ -14,6 +14,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from poi_people.infrastructure.api.routes import config as config_routes
 from poi_people.infrastructure.api.routes import health as health_routes
+from poi_people.infrastructure.api.routes import person_detail as person_detail_routes
+from poi_people.infrastructure.api.routes import persons as persons_routes
+from poi_people.infrastructure.api.routes import search as search_routes
 from poi_people.infrastructure.config.loader import load_config
 from poi_people.infrastructure.database.engine import create_engine, create_session_factory
 
@@ -88,5 +91,8 @@ def create_app() -> FastAPI:
     # Routes
     app.include_router(health_routes.router)
     app.include_router(config_routes.router)
+    app.include_router(persons_routes.router)
+    app.include_router(person_detail_routes.router)
+    app.include_router(search_routes.router)
 
     return app

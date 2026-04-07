@@ -59,5 +59,87 @@ services:
       db:
         condition: service_healthy
 
+  # Pipeline services (run with: docker compose --profile pipeline up <service>)
+  person-sync:
+    build:
+      context: ./backend
+    profiles: ["pipeline"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+      CONFIG_PATH: /app/config/settings.yaml
+    command: ["uv", "run", "python", "-m", "poi_people.entrypoints.person_sync", "/data/wikidata-dump.json.gz"]
+    volumes:
+      - ./backend/config:/app/config:ro
+      - ./data:/data:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+
+  pageview-ingest:
+    build:
+      context: ./backend
+    profiles: ["pipeline"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+      CONFIG_PATH: /app/config/settings.yaml
+      AWS_DEFAULT_REGION: us-east-1
+    command: ["uv", "run", "python", "-m", "poi_people.entrypoints.pageview_ingest", "${INGEST_DATE:-2026-04-04}"]
+    volumes:
+      - ./backend/config:/app/config:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+
+  score-compute:
+    build:
+      context: ./backend
+    profiles: ["pipeline"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+      CONFIG_PATH: /app/config/settings.yaml
+    command: ["uv", "run", "python", "-m", "poi_people.entrypoints.score_compute", "${SCORE_DATE:-2026-04-04}"]
+    volumes:
+      - ./backend/config:/app/config:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+
+  backfill:
+    build:
+      context: ./backend
+    profiles: ["pipeline"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+      CONFIG_PATH: /app/config/settings.yaml
+      AWS_DEFAULT_REGION: us-east-1
+    command: ["uv", "run", "python", "-m", "poi_people.entrypoints.backfill", "--start-date", "${START_DATE:-2026-03-01}", "--end-date", "${END_DATE:-2026-04-04}"]
+    volumes:
+      - ./backend/config:/app/config:ro
+      - ./data:/data:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+
+  seed:
+    build:
+      context: ./backend
+    profiles: ["pipeline"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+    command: ["uv", "run", "python", "-m", "poi_people.entrypoints.seed"]
+    depends_on:
+      db:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+
 volumes:
   pgdata:
