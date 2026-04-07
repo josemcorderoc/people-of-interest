@@ -1,0 +1,63 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: poi_people
+      POSTGRES_USER: poi_people
+      POSTGRES_PASSWORD: poi_people
+    ports:
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U poi_people -d poi_people"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  db-migrate:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+    command: ["uv", "run", "alembic", "upgrade", "head"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  api:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://poi_people:poi_people@db:5432/poi_people
+      CONFIG_PATH: /app/config/settings.yaml
+      CORS_ALLOWED_ORIGINS: "http://localhost:3000"
+    command: ["uv", "run", "uvicorn", "poi_people.infrastructure.api.app:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/config:/app/config:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

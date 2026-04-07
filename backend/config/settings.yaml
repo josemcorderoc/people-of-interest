@@ -1,0 +1,75 @@
+# People of Interest — Application Configuration
+
+# Top 10 Wikipedia language editions by traffic volume.
+language_editions:
+  - en   # English
+  - ja   # Japanese
+  - ru   # Russian
+  - de   # German
+  - es   # Spanish
+  - fr   # French
+  - zh   # Chinese
+  - it   # Italian
+  - pt   # Portuguese
+  - pl   # Polish
+
+# P106 (occupation) QID → person category mapping
+# Maps Wikidata occupation QIDs to one of 8 categories.
+# Unmapped occupations resolve to "other".
+person_categories:
+  # Politicians
+  Q82955: politician       # politician
+  Q193391: politician      # diplomat
+  Q116: politician         # monarch
+  Q30461: politician       # president
+  Q2285706: politician     # head of government
+
+  # Athletes
+  Q2066131: athlete        # athlete
+  Q937857: athlete         # footballer
+  Q10843263: athlete       # basketball player
+  Q11513337: athlete       # athletics competitor
+  Q19204627: athlete       # American football player
+
+  # Artists
+  Q33999: artist           # actor
+  Q177220: artist          # singer
+  Q639669: artist          # musician
+  Q3455803: artist         # director
+  Q2526255: artist         # film director
+  Q10800557: artist        # film actor
+
+  # Scientists
+  Q901: scientist          # scientist
+  Q1622272: scientist      # professor
+  Q169470: scientist       # physicist
+  Q593644: scientist       # chemist
+
+  # Business
+  Q43845: business         # businessperson
+  Q484876: business        # CEO
+  Q131524: business        # entrepreneur
+
+  # Writers
+  Q36180: writer           # writer
+  Q4853732: writer         # author
+  Q6625963: writer         # novelist
+  Q49757: writer           # poet
+
+  # Historical — mapped explicitly; also any person with death_date < 1900
+  # is classified as historical if their occupation is unmapped.
+
+  # Unmapped occupations resolve to "other"
+
+# Pipeline execution settings
+pipeline:
+  retry_max_attempts: 3
+  retry_backoff_minutes:
+    - 1
+    - 5
+    - 15
+  wikimedia_user_agent: "PeopleOfInterest/0.1 (https://github.com/josemcorderoc/people-of-interest; poi-people@example.com)"
+  wikimedia_rate_limit_rps: 1
+
+# S3 bucket for shared pageview dumps
+s3_bucket: poi-pageview-dumps
