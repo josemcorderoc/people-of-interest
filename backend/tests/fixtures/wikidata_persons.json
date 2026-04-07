@@ -1,0 +1,144 @@
+[
+  {
+    "type": "item",
+    "id": "Q76",
+    "labels": {"en": {"value": "Barack Obama"}, "ja": {"value": "バラク・オバマ"}, "de": {"value": "Barack Obama"}},
+    "sitelinks": {"enwiki": {"title": "Barack Obama"}, "jawiki": {"title": "バラク・オバマ"}, "dewiki": {"title": "Barack Obama"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1961-08-04T00:00:00Z"}}}}],
+      "P106": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 82955}}}}],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581097}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 30}}}}],
+      "P18": [{"mainsnak": {"datavalue": {"value": "President_Barack_Obama.jpg"}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q567",
+    "labels": {"en": {"value": "Angela Merkel"}, "de": {"value": "Angela Merkel"}},
+    "sitelinks": {"enwiki": {"title": "Angela Merkel"}, "dewiki": {"title": "Angela Merkel"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1954-07-17T00:00:00Z"}}}}],
+      "P106": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 82955}}}}],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581072}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 183}}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q615",
+    "labels": {"en": {"value": "Lionel Messi"}, "es": {"value": "Lionel Messi"}},
+    "sitelinks": {"enwiki": {"title": "Lionel Messi"}, "eswiki": {"title": "Lionel Messi"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1987-06-24T00:00:00Z"}}}}],
+      "P106": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 937857}}}}],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581097}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 414}}}}],
+      "P18": [{"mainsnak": {"datavalue": {"value": "Lionel_Messi_2023.jpg"}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q1299",
+    "labels": {"en": {"value": "The Beatles"}},
+    "sitelinks": {"enwiki": {"title": "The Beatles"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 215380}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1960-01-01T00:00:00Z"}}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q5284",
+    "labels": {"en": {"value": "Bill Gates"}, "de": {"value": "Bill Gates"}},
+    "sitelinks": {"enwiki": {"title": "Bill Gates"}, "dewiki": {"title": "Bill Gates"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1955-10-28T00:00:00Z"}}}}],
+      "P106": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 43845}}}}],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581097}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 30}}}}],
+      "P18": [{"mainsnak": {"datavalue": {"value": "Bill_Gates_2017.jpg"}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q937",
+    "labels": {"en": {"value": "Albert Einstein"}, "de": {"value": "Albert Einstein"}},
+    "sitelinks": {"enwiki": {"title": "Albert Einstein"}, "dewiki": {"title": "Albert Einstein"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1879-03-14T00:00:00Z"}}}}],
+      "P570": [{"mainsnak": {"datavalue": {"value": {"time": "+1955-04-18T00:00:00Z"}}}}],
+      "P106": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 169470}}}}],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581097}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 183}}}}],
+      "P18": [{"mainsnak": {"datavalue": {"value": "Einstein_1921.jpg"}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q36844",
+    "labels": {"en": {"value": "Taylor Swift"}},
+    "sitelinks": {"enwiki": {"title": "Taylor Swift"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1989-12-13T00:00:00Z"}}}}],
+      "P106": [
+        {"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 177220}}}},
+        {"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 36180}}}}
+      ],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581072}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 30}}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q7186",
+    "labels": {"en": {"value": "Marie Curie"}, "fr": {"value": "Marie Curie"}},
+    "sitelinks": {"enwiki": {"title": "Marie Curie"}, "frwiki": {"title": "Marie Curie"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1867-11-07T00:00:00Z"}}}}],
+      "P570": [{"mainsnak": {"datavalue": {"value": {"time": "+1934-07-04T00:00:00Z"}}}}],
+      "P106": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 593644}}}}],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581072}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 36}}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q11153",
+    "labels": {"en": {"value": "J. K. Rowling"}},
+    "sitelinks": {"enwiki": {"title": "J. K. Rowling"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1965-07-31T00:00:00Z"}}}}],
+      "P106": [
+        {"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6625963}}}},
+        {"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 36180}}}}
+      ],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581072}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 145}}}}]
+    }
+  },
+  {
+    "type": "item",
+    "id": "Q33977",
+    "labels": {"en": {"value": "Elon Musk"}},
+    "sitelinks": {"enwiki": {"title": "Elon Musk"}},
+    "claims": {
+      "P31": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 5}}}}],
+      "P569": [{"mainsnak": {"datavalue": {"value": {"time": "+1971-06-28T00:00:00Z"}}}}],
+      "P106": [
+        {"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 131524}}}},
+        {"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 43845}}}}
+      ],
+      "P21": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 6581097}}}}],
+      "P27": [{"mainsnak": {"datavalue": {"value": {"entity-type": "item", "numeric-id": 30}}}}]
+    }
+  }
+]
